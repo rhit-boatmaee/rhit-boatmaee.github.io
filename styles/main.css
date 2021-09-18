@@ -1,0 +1,123 @@
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+}
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    display: grid;
+    line-height: 1.5em;
+
+
+
+    grid-template-areas: "head head""nav nav""main main""foot foot";
+    grid-template-columns: 1fr fr;
+    grid-template-rows: auto auto 1fr auto;
+    background-image: linear-gradient(90deg, rgba(233,61,255, 0.08) 0%,rgba(19,191,241, 0.15) 100%);
+
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head head""nav main""foot foot";
+        grid-template-columns: 1fr fr;
+        grid-template-rows: auto 1fr auto;
+
+    }
+}
+
+h1,
+h2 {
+    line-height: 1.2em;
+    font-family: 'Major Mono Display', monospace;
+
+}
+
+
+
+
+
+body #portfolio img {
+    height: 25em;
+}
+
+p {
+    max-width: 50em;
+
+}
+
+body>header {
+    grid-area: head;
+    
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(199,0,229),rgb(63,225,248));
+   
+
+
+}
+
+body>nav {
+    grid-area: nav;
+
+}
+
+body>footer {
+    grid-area: foot;
+
+}
+
+body>main {
+    grid-area: main;
+
+
+}
+
+header,
+footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+
+}
+
+header h1,
+footer h1 {
+    margin: 0;
+}
+
+body>* {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body>nav ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+body #portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
