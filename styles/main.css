@@ -6,38 +6,38 @@
 
 
 
-
-
-
-
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     display: grid;
     line-height: 1.5em;
+     
 
 
 
-    grid-template-areas: "head head""nav nav""main main""foot foot";
+    grid-template-areas: "head  head""nav nav""main foot";
     grid-template-columns: 1fr fr;
     grid-template-rows: auto auto 1fr auto;
-    background-image: linear-gradient(90deg, rgba(233,61,255, 0.08) 0%,rgba(19,191,241, 0.15) 100%);
+    background-image: linear-gradient(90deg, rgba(233, 61, 255, 0.08) 0%, rgba(19, 191, 241, 0.15) 100%);
 
 }
 
 @media screen and (min-width: 25em) {
     body {
-        grid-template-areas: "head head""nav main""foot foot";
+        grid-template-areas: "head head ""nav nav" "main foot";
         grid-template-columns: 1fr fr;
         grid-template-rows: auto 1fr auto;
-
+        background-image: linear-gradient(90deg, rgba(233, 61, 255, 0.08) 0%, rgba(19, 191, 241, 0.15) 100%);
     }
 }
 
-h1,
-h2 {
+
+
+
+h1 {
     line-height: 1.2em;
     font-family: 'Major Mono Display', monospace;
+
 
 }
 
@@ -45,8 +45,9 @@ h2 {
 
 
 
-body #portfolio img {
+body #portfolioItems img {
     height: 25em;
+   
 }
 
 p {
@@ -54,31 +55,53 @@ p {
 
 }
 
-body>header {
+
+body > header{
     grid-area: head;
     
-    background-image: repeating-linear-gradient(45deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(199,0,229),rgb(63,225,248));
-   
+    text-align: center;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 11px, rgba(255, 255, 255, 0.05) 11px, rgba(255, 255, 255, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 11px, rgba(255, 255, 255, 0.05) 11px, rgba(255, 255, 255, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 11px, rgba(255, 255, 255, 0.05) 11px, rgba(255, 255, 255, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 11px, rgba(255, 255, 255, 0.05) 11px, rgba(255, 255, 255, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, rgb(199, 0, 229), rgb(63, 225, 248));
 
+    
 
 }
 
-body>nav {
+body > nav {
     grid-area: nav;
-
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+ 
 }
 
 body>footer {
     grid-area: foot;
-
+   
 }
 
 body>main {
     grid-area: main;
 
-
 }
 
+.hidden{
+    display: none;
+
+}
+#supriseButton{
+    background-color: rgb(60, 197, 243);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    display: block;
+    border-radius: 4px;
+    border: .5rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+#supriseButton:hover{
+    background-color: blueviolet;
+}
 header,
 footer {
     padding-top: var(--vertical-space);
@@ -94,11 +117,20 @@ footer h1 {
 body>* {
     padding-left: var(--horizontal-space);
     padding-right: var(--horizontal-space);
+
 }
 
 body>nav ul {
     list-style-type: none;
     padding: 0;
+    display: inline;
+
+}
+
+body nav ul li {
+    list-style-type: none;
+    padding: 4rem;
+    display: inline-block;
 
 }
 
